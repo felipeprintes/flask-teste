@@ -21,6 +21,11 @@
 	font-size: 16px;
 }
 
+.navText:hover{
+	color: #ce422b;
+	transition: 0.25s;
+}
+
 .navbar-brand {
     display: inline-block;
     padding-top: .3125rem;
@@ -34,4 +39,8 @@
 
 .navbar-nav{
 	letter-spacing: .0625rem;
+}
+
+.header-color{
+	background-color: #ce422b;
 }
