@@ -1,6 +1,8 @@
 .navbar{
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    border: none;
+    transition-duration: .3s;
 }
 
 .navbar-color{
@@ -35,12 +37,20 @@
     line-height: inherit;
     white-space: nowrap;
     font-weight: 700;
+    transition-duration: .3s;
 }
 
 .navbar-nav{
 	letter-spacing: .0625rem;
 }
-
-.header-color{
-	background-color: #ce422b;
+.header-style{
+    padding-top: 106px;
+}
+.section1-style{
+    background-color: #ce422b;
+    height: 850px;
+}
+.section2-style{
+    background-color: #ffffff;
+    height: 750px;
 }
