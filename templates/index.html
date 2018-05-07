@@ -48,9 +48,9 @@
 	      <div class="container">
 	        <h1>BANNER EM CONSTRUCAO</h1>
 
-	        	<form method="POST", action="/autenticar">
-	        		<input type="hidden" name="proxima" value={{ proxima or '/'}}>
-	        		<h2>Email</h2><input type="number" name="email">
+	        	<form method="POST", action="{{url_for('autenticar')}}">
+	        		<input type="hidden" name="proxima" value="{{ proxima or url_for('index')}}" >
+	        		<h2>Email</h2><input type="text" name="email">
 	        		<h2>Senha</h2><input type="password" name="senha">
 	        		<br><br><input type="submit" name="Entrar">
 	        	</form>

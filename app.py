@@ -4,19 +4,16 @@ app = Flask(__name__)
 app.secret_key='minhachave'
 
 class Usuario:
-	def __init__(self,id, email, idade, sexo, senha, email):
+	def __init__(self,id, nome, senha, email):
 		self.id=id
 		self.nome=nome
-		self.idade=idade
-		self.sexo=sexo
 		self.senha=senha
 		self.email=email
 
-usuario1 = Usuario(1,"Felipe", 22, "masculino", '1234', "felipe@felipe.com.br")
-usuario2 = Usuario(2,"João", 24, "masculino", '12345', "joao@joao.com.br")
+usuario1 = Usuario(1,"felipe",'1234', "felipe@felipe.com.br")
+usuario2 = Usuario(2,"joão",'12345', "joao@joao.com.br")
 
-lista = {usuario1.id: usuario1,
-		 usuario2.id: usuario2}
+lista = [usuario1,usuario2]
 
 @app.route('/')
 def index():
@@ -36,8 +33,6 @@ def novousuario():
 @app.route('/criar', methods=['POST',])
 def criar():
 	nome = request.form['nome']
-	idade = request.form['idade']
-	sexo = request.form['sexo']
 	senha = request.form['senha']
 	email = request.form['email']
 	#usuario = Usuario(id,nome,idade,sexo,senha,email)
@@ -53,7 +48,7 @@ def autenticar():
 	if request.form['usuario'] in lista:
 		usuario = lista[request.form['usuario']]
 		if usuario.senha == request.form['senha']:
-			session['usuario_logado'] = usuario.id
+			session['usuario_logado'] = usuario.nome
 			proxima_pagina=request.form['proxima']
 			return redirect(proxima_pagina)
 	else:
